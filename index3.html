@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root">
+
+        </div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        var root = document.getElementById("root");
+        function Button() {return ( <button style={{backgroundColor: "tomato"}} onClick={()=> console.log("You clicked me!")}>Click Me!</button> );}
+        const Title = () => (<h3 id="title" onMouseEnter={() => console.log("mouse Entered!")}>Hello I'm a title</h3>); //jsx를 사용하여 새로 만든 h3
+        //var h3 = React.createElement("h3", {onMouseEnter: () => console.log('mouse entered.')}, "Hello, I'm a span!");//()안에는 생성하고자 하는 HTML 태그와 같은 이름이어야 한다.
+        //const btn = React.createElement("button", {onClick: () => console.log("i'm clicked!")}, "Click Me!");
+        const Container = (<div>
+            <Title/>
+            <Button/> 
+            </div>);//만약 소문자로 시작하면 태그들을 HTML tag로 인식하므로, 꼭 대문자로 적어줄것...
+        ReactDOM.render(Container, root);//React element를 가지고 HTML로 만들어 배치한다. (사용자에게 보여줌)
+        //container를 root안에 render 해주세요.
+    </script>
+</html>
